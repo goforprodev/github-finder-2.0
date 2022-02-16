@@ -1,8 +1,9 @@
-import React from "react"
+import React,{useContext,useState,useEffect} from "react"
 import Card from "./Card"
 import Git from "../assets/git.svg"
 import Followers from "./Followers";
 import Links from "./Links";
+import UserContext from "../context/userContext"
 
 const links = [
     {
@@ -10,7 +11,7 @@ const links = [
         svg : "../assets/icon-location.svg"
     },
     {
-        name : "@twieet",
+        name : "@tweet",
         svg: "../assets/icon-twitter.svg"
     },
     {
@@ -23,6 +24,14 @@ const links = [
     }
 ]
 const UserDetails = () => {
+    const [user,setUser] = useState('octocat')
+    const [userData,setUserData] = useState({})
+    const [isLoading,setIsLoading] = useState(true)
+    const {fetchSingleUser} = useContext(UserContext)
+
+    console.log(fetchSingleUser)
+
+
     return(
         <Card>
             <div className="p-7 flex items-start">
@@ -36,8 +45,8 @@ const UserDetails = () => {
                         <p>Joined 25 Jan 2011</p>
                     </div>
                     <p className="my-4">There is no bio to show yet</p>
-                    <Card bg={"dark-blue"}>
-                        <div className={"flex justify-around items-center p-4 my-7"}>
+                    <Card>
+                        <div className={"bg-dark-blue flex justify-around items-center p-4 my-7"}>
                             <Followers text={"Repos"} number={"8"} />
                             <Followers text={"Repos"} number={"8"} />
                             <Followers text={"Repos"} number={"8"} />

@@ -4,7 +4,7 @@ import Card from "./Card"
 
 const SearchBar = () => {
     return(
-        <Card>
+        <Card bg={"light-blue"}>
             <div className={"flex justify-between items-center p-2"}>
                 <img src={SearchIcon} alt={"search-icon"} className={"px-5"}/>
                 <input type="text" placeholder={"Search Github Username..."}
