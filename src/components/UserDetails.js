@@ -1,9 +1,8 @@
-import React,{useContext,useState,useEffect} from "react"
+import React from "react"
 import Card from "./Card"
 import Git from "../assets/git.svg"
 import Followers from "./Followers";
 import Links from "./Links";
-import UserContext from "../context/userContext"
 
 const links = [
     {
@@ -23,14 +22,9 @@ const links = [
         svg: "../assets/icon-company.svg"
     }
 ]
+
+
 const UserDetails = () => {
-    const [user,setUser] = useState('octocat')
-    const [userData,setUserData] = useState({})
-    const [isLoading,setIsLoading] = useState(true)
-    const {fetchSingleUser} = useContext(UserContext)
-
-    console.log(fetchSingleUser)
-
 
     return(
         <Card>

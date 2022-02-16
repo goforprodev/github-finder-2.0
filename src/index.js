@@ -4,12 +4,10 @@ import './index.css';
 import App from './containers/App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
-import Provider from "./context/userContext"
+
 
 ReactDOM.render(
-    <Provider>
-        <App />
-    </Provider>,
+        <App />,
   document.getElementById('root')
 );
 
