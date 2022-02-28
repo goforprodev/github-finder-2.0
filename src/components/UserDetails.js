@@ -3,12 +3,12 @@ import Card from "./Card"
 import Git from "../assets/git.svg"
 import Followers from "./Followers";
 import Links from "./Links";
-
+import {formatDate} from "../utils/formatDate"
 
 
 
 const UserDetails = ({userData}) => {
-    const {avatar_url,name,login,bio,public_repos,followers,following,company,blog,location,twitter_username} = userData
+    const {avatar_url,created_at,name,login,bio,public_repos,followers,following,company,blog,location,twitter_username} = userData
     const links = [
         {
             name : location,
@@ -37,7 +37,7 @@ const UserDetails = ({userData}) => {
                             <h1>{name}</h1>
                             <p className={"text-primary-color py-2 "}>@{login}</p>
                         </div>
-                        <p>Joined 25 Jan 2011</p>
+                        <p>Joined {formatDate(created_at)}</p>
                     </div>
                     <p className="my-4">{bio || 'There is no bio to show yet'}</p>
                     <Card>

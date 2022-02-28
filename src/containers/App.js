@@ -37,7 +37,10 @@ function App() {
     useEffect( async () => {
         await fetchUsers('octocat')
     },[])
-    const {userData,error} = state
+    const {isLoading,userData,error} = state
+  if(isLoading){
+      return (<p>Loading...</p>)
+  }
   return (
     <div className="App bg-dark-blue h-screen text-white flex items-center content-center">
         <div className="container mx-auto max-w-3xl px-3">
